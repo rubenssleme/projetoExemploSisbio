@@ -34,5 +34,11 @@ namespace projetoAgendaDeContatos.dominio
         public string _endereco { get => endereco; set => endereco = value; }
         public string _telefone { get => telefone; set => telefone = value; }
         public string _eMail { get => eMail; set => eMail = value; }
+
+
+        public override string ToString()
+        {
+            return String.Concat( _id + "-", _nome + "-", _endereco + "-", _eMail + "-", _telefone);
+        }
     }
 }
