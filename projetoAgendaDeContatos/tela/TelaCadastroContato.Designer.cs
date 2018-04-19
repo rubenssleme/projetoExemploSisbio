@@ -192,6 +192,7 @@
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(121, 20);
             this.mskTelefone.TabIndex = 33;
+            this.mskTelefone.Text = "011966466687";
             this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label4
@@ -210,6 +211,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(229, 20);
             this.txtEmail.TabIndex = 31;
+            this.txtEmail.Text = "rubensleme@";
             // 
             // label3
             // 
@@ -227,6 +229,7 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(229, 20);
             this.txtEndereco.TabIndex = 29;
+            this.txtEndereco.Text = "Rua sem fim, 230";
             // 
             // label2
             // 
@@ -245,6 +248,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(224, 20);
             this.txtNome.TabIndex = 27;
+            this.txtNome.Text = "Rubens Leme";
             // 
             // label1
             // 
