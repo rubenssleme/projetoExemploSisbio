@@ -16,7 +16,7 @@ public class CursoApplication {
                 .run(args);
 
     }
-
+//Criação do Bean
     @Bean
     public TelaLogin2 frame() {
         return new TelaLogin2();
