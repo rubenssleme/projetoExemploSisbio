@@ -1,2 +1,2 @@
-# projetoAgendaDeContatos
-Projeto Educacional como exemplo de uma agenda de contato orientada a objeto em C#.
+# cursoSpringBoot2020
+Curso de Spring Boot para atualização 2020
