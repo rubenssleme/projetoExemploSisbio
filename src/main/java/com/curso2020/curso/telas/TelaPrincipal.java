@@ -246,7 +246,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuOpcoesConfiguracoes.setText("Configurações");
         menuOpcoes.add(menuOpcoesConfiguracoes);
 
-        menuOpcoesSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         menuOpcoesSair.setText("Sair");
         menuOpcoes.add(menuOpcoesSair);
 

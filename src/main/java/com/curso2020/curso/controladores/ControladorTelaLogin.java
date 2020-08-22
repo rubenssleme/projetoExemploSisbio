@@ -2,40 +2,39 @@ package com.curso2020.curso.controladores;
 
 import com.curso2020.curso.telas.TelaPrincipal;
 import com.curso2020.curso.entidades.Usuario;
+import com.curso2020.curso.servicos.UsuarioServico;
 //import br.com.bg.sgfapm.utilitarios.Conexao;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import org.springframework.stereotype.Component;
-
-
 
 public class ControladorTelaLogin {
 
     private JFrame telaLogin;
     private JTextField txtUsuario;
     private JTextField txtSenha;
-    private JLabel lblStatus;
     private JButton btnLogin;
     private Usuario usuario;
 
-    public ControladorTelaLogin(JFrame tela, JTextField txtUsuario, JTextField txtSenha, JLabel lblStatus, JButton btnLogin) {
+    private UsuarioServico usuarioServico;
+
+    public ControladorTelaLogin(JFrame tela, JTextField txtUsuario, JTextField txtSenha, JButton btnLogin, UsuarioServico usuarioServico) {
         this.telaLogin = tela;
         this.txtUsuario = txtUsuario;
         this.txtSenha = txtSenha;
-        this.lblStatus = lblStatus;
         this.btnLogin = btnLogin;
-        
+
         this.txtUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                transferirFoco((JComponent)e.getSource());
+                transferirFoco((JComponent) e.getSource());
             }
         });
         this.txtSenha.addActionListener(new ActionListener() {
@@ -50,8 +49,9 @@ public class ControladorTelaLogin {
                 logar();
             }
         });
-        
+
         //checarConexao();
+        this.usuarioServico = usuarioServico;
     }
 
 //    private void checarConexao() {
@@ -69,8 +69,7 @@ public class ControladorTelaLogin {
 //            Logger.getLogger(ControladorTelaLogin.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //    }
-    
-    private void transferirFoco(JComponent campo){
+    private void transferirFoco(JComponent campo) {
         campo.transferFocus();
     }
 
@@ -93,7 +92,18 @@ public class ControladorTelaLogin {
                     TelaPrincipal.menuCadastroUsuario.setEnabled(false);
                 }
                 principal.setVisible(true);
-                telaLogin.dispose();
+                telaLogin.setVisible(false);
+
+                txtUsuario.setText("");
+                txtSenha.setText("");
+
+                principal.addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosed(WindowEvent e) {
+                        telaLogin.setVisible(true);
+                        txtUsuario.grabFocus();
+                    }
+                });
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
                 txtSenha.selectAll();
@@ -105,8 +115,8 @@ public class ControladorTelaLogin {
     }
 
     private boolean usuarioCadastrado() {
-       // usuario = new UsuarioRepositorio().buscarPorUsuarioSenha(txtUsuario.getText(), txtSenha.getText());
-        return (usuario != null);
+        usuario = usuarioServico.autenticar(txtUsuario.getText(), txtSenha.getText());
+        return usuario != null;
     }
 
     private void fechar() {
