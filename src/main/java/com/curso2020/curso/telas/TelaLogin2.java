@@ -1,21 +1,26 @@
 package com.curso2020.curso.telas;
 
 import com.curso2020.curso.controladores.ControladorTelaLogin;
+import com.curso2020.curso.servicos.UsuarioServico;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author l
  */
 
+@Component
 public class TelaLogin2 extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaLogin
+     * @param usuarioServico
      */
    
-    public TelaLogin2() {
+    public TelaLogin2(UsuarioServico usuarioServico) {
         initComponents();
-        // controlador = new ControladorTelaLogin(this, txtUsuario, txtSenha, lblStatus, btnLogin);
+         controlador = new ControladorTelaLogin(this, txtUsuario, txtSenha, btnLogin, usuarioServico);
     }
 
     /**
@@ -32,7 +37,7 @@ public class TelaLogin2 extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
         txtSenha = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
 
@@ -48,14 +53,14 @@ public class TelaLogin2 extends javax.swing.JFrame {
 
         btnLogin.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
         btnLogin.setText("Login");
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+
+        btnCancelar.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
-
-        jButton1.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
-        jButton1.setText("Cancelar");
 
         jPanel1.setBackground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
 
@@ -95,7 +100,7 @@ public class TelaLogin2 extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel1)
@@ -126,7 +131,7 @@ public class TelaLogin2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
-                    .addComponent(jButton1))
+                    .addComponent(btnCancelar))
                 .addGap(4, 4, 4)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -135,14 +140,13 @@ public class TelaLogin2 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        TelaPrincipal tela = new TelaPrincipal();
-        tela.setVisible(true);
-    }//GEN-LAST:event_btnLoginActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

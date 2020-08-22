@@ -69,8 +69,6 @@ public abstract class ControladorTela {
     }
 
     public void telaLogin() {
-        login = new TelaLogin2();
-        login.setVisible(true);
         telaPrincipal.dispose();
     }
 
