@@ -1,4 +1,4 @@
-package br.com.sisbio.config;
+package br.com.sisbio;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
