@@ -10,7 +10,7 @@ import br.com.sisbio.tela.TelaConfiguracao;
 import br.com.sisbio.tela.TelaConsulta;
 import br.com.sisbio.tela.TelaContribuicao;
 import br.com.sisbio.tela.TelaDespesa;
-import br.com.sisbio.tela.TelaLogin2;
+import br.com.sisbio.tela.TelaLogin;
 import br.com.sisbio.tela.TelaSobre;
 import br.com.sisbio.tela.TelaVenda;
 import java.beans.PropertyVetoException;
@@ -33,7 +33,7 @@ public abstract class ControladorTela {
     private JDesktopPane desktop;
 
     private AcessoRapido acessoRapido;
-    private TelaLogin2 login;
+    private TelaLogin login;
     private TelaCadastroUsuario usuario;
     private TelaCadastroAluno aluno;
     private TelaCadastroProduto produto;

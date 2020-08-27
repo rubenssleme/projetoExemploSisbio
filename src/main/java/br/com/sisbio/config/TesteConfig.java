@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 import br.com.sisbio.cadastramento.api.Usuario;
 import br.com.sisbio.cadastramento.api.repository.UsuarioRepositorio;
-import br.com.sisbio.tela.TelaLogin2;
+import br.com.sisbio.tela.TelaLogin;
 import javax.swing.UIManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class TesteConfig implements CommandLineRunner {
     private UsuarioRepositorio usuarioRepositorio;
 
     @Autowired
-    private TelaLogin2 frame;
+    private TelaLogin frame;
 
     @Autowired
     private PasswordEncoder passwordEncoder;

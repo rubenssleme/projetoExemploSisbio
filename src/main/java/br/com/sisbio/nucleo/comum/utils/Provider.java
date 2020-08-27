@@ -1,7 +1,7 @@
 package br.com.sisbio.nucleo.comum.utils;
 
 import br.com.sisbio.cadastramento.api.service.UsuarioServico;
-import br.com.sisbio.tela.TelaLogin2;
+import br.com.sisbio.tela.TelaLogin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +15,8 @@ public class Provider {
     private UsuarioServico usuarioServico;
 
     @Bean
-    public TelaLogin2 frame() {
-        return new TelaLogin2(usuarioServico);
+    public TelaLogin frame() {
+        return new TelaLogin(usuarioServico);
     }
 
     @Bean
