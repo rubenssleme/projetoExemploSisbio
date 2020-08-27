@@ -1,7 +1,7 @@
 package br.com.sisbio.tela.controlador;
 
 import br.com.sisbio.tela.AcessoRapido;
-import br.com.sisbio.tela.TelaCadastroAluno;
+import br.com.sisbio.tela.TelaCadastroBiometrias;
 import br.com.sisbio.tela.TelaCadastroFuncionario;
 import br.com.sisbio.tela.TelaCadastroProduto;
 import br.com.sisbio.tela.TelaCadastroUsuario;
@@ -35,7 +35,7 @@ public abstract class ControladorTela {
     private AcessoRapido acessoRapido;
     private TelaLogin login;
     private TelaCadastroUsuario usuario;
-    private TelaCadastroAluno aluno;
+    private TelaCadastroBiometrias aluno;
     private TelaCadastroProduto produto;
     private TelaCadastroFuncionario funcionario;
     private TelaConsulta consulta;
@@ -88,7 +88,7 @@ public abstract class ControladorTela {
 
     public void telaCadastroAluno() {
         if (aluno == null) {
-            aluno = new TelaCadastroAluno();
+            aluno = new TelaCadastroBiometrias();
             desktop.add(aluno);
         }
         aluno.setVisible(true);
