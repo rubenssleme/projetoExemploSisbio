@@ -19,9 +19,6 @@ import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-//import net.sf.jasperreports.engine.JasperFillManager;
-//import net.sf.jasperreports.engine.JasperPrint;
-//import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -49,7 +46,12 @@ public abstract class ControladorTela {
         this.telaPrincipal = telaPrincipal;
         this.desktop = desktop;
     }
-
+public void fecharTela(JFrame tela){
+        if(tela != null){
+            System.exit(0);
+        }
+        
+    }
     public void acessoRapido(JFrame telaPrincipal, JDesktopPane desktop) {
         if (acessoRapido == null) {
             acessoRapido = new AcessoRapido(telaPrincipal, desktop);

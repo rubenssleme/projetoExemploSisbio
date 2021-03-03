@@ -119,9 +119,12 @@ public class ControladorTelaLogin {
         return usuario != null;
     }
 
-    private void fechar() {
-        telaLogin.setVisible(false);
-        TelaPrincipal telaPrincipal = new TelaPrincipal();
-        telaPrincipal.setVisible(true);
-    }
+    
+    
+    
+//    private void fechar() {
+//        telaLogin.setVisible(false);
+//        TelaPrincipal telaPrincipal = new TelaPrincipal();
+//        telaPrincipal.setVisible(true);
+//    }
 }

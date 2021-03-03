@@ -53,6 +53,7 @@ public class AcessoRapido extends javax.swing.JInternalFrame {
 
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("Acesso Rápido");
         setPreferredSize(new java.awt.Dimension(640, 480));
 
@@ -143,7 +144,6 @@ public class AcessoRapido extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        lblAluno.getAccessibleContext().setAccessibleName("Cadastramento");
         lblAluno.getAccessibleContext().setAccessibleDescription("Cadastramento");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Registrar"));
